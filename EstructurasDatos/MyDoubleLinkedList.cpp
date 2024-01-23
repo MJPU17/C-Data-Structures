@@ -122,7 +122,7 @@ public:
         if(this->current!=nullptr){
             info=current->getInfo();
             DNode<T> *removed=current;
-            if(this->head==this->current)head=current->getNext();
+            if(this->head==this->current && position==0)head=current->getNext();
             else current->getPrevious()->setNext(current->getNext());
             if(current->getNext()!=nullptr)current->getNext()->setPrevious(current->getPrevious());
             current=current->getNext();
